@@ -26,7 +26,7 @@ app.get('/api/timestamp', (req, res) => {
 })
 
 app.get('/api/timestamp/:date_string', (req, res) => {
-  let date_string = req.params.date_string
+  var date_string = req.params.date_string
   var date = new Date(date_string)
 
   if(date.toString() === 'Invalid Date') {
