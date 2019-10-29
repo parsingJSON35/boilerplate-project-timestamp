@@ -21,12 +21,12 @@ app.get("/", function (req, res) {
 
 // your first API endpoint...
 app.get('/api/timestamp', (req, res) => {
-  let date = new Date()
+  var date = new Date()
   res.json({unix: date.getTime(), utc: date.toUTCString()})
 })
 
 app.get('/api/timestamp/:date_string', (req, res) => {
-  let date = new Date(req.params.date_string)
+  var date = new Date(req.params.date_string)
   if(date) { res.json({unix: date.getTime(), utc: date.toUTCString()}) }
   else { res.json({unix: null, utc: 'Invalid Date'}) }
 })
